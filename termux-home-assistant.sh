@@ -116,7 +116,7 @@ do_install() {
 
   pip install git+https://github.com/amitdev/lru-dict@5013406c409a0a143a315146df388281bfb2172d
   
-  pip install ./contrib/ha-av-10.0.0.tar.gz
+  pip install $script_dir/contrib/ha-av-10.0.0.tar.gz
   SODIUM_INSTALL=system pip install pynacl
 
   RUSTFLAGS="-C lto=n" CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')"  CRYPTOGRAPHY_DONT_BUILD_RUST=1 pip install homeassistant
