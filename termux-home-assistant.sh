@@ -108,6 +108,7 @@ do_install() {
   pip install tzdata
   pip install maturin
   pip install setuptools
+  pkg i freetype game-music-emu libaom libandroid-glob libass libbluray libbz2 libdav1d libgnutls libiconv liblzma libmp3lame libopus librav1e libsoxr libssh libtheora libvorbis libvpx libvidstab libwebp libx264 libx265 libxml2 libzimg littlecms ocl-icd xvidcore zlib opencl-headers jq
   MATHLIB=m pip install aiohttp_cors==0.7.0
   MATHLIB=m pip install PyTurboJPEG==1.6.7
   MATHLIB=m pip install numpy==1.23.2
@@ -115,8 +116,9 @@ do_install() {
   apt install -f $APT_INSTALL_FLAGS
 
   pip install git+https://github.com/amitdev/lru-dict@5013406c409a0a143a315146df388281bfb2172d
-  
+  pkg install ffmpeg
   pip install $script_dir/contrib/ha-av-10.0.0.tar.gz
+  
   SODIUM_INSTALL=system pip install pynacl
 
   RUSTFLAGS="-C lto=n" CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')"  CRYPTOGRAPHY_DONT_BUILD_RUST=1 pip install homeassistant
