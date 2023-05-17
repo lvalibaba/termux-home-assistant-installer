@@ -9,7 +9,7 @@ A script to provision Home Assistant Core on an Android / Termux device. This is
 ## Quick Installer
 
 ```bash
-curl -sL https://github.com/lvalibaba/termux-home-assistant-installer/releases/download/v2023.4.4-alpha.3/remote-install.sh | bash
+curl -sL https://github.com/lvalibaba/termux-home-assistant-installer/releases/download/2023.5.3/remote-install.sh | bash
 ```
 
 Please be patient, this will take a while depending on your device specifications.
@@ -17,7 +17,6 @@ Please be patient, this will take a while depending on your device specification
 ## What this script does
 
 - Updates packages, and installs dependencies
-- Downgrades `ffmpeg` to 5.1.2-7 for `ha-av` compatibility
 - Creates a virtualenv in `~/hass`. **Please ensure this directory does not exist before installing**
 - Downgrades `python-numpy` to 1.23.2
 - Installs Home Assistant Core in your `~/hass` directory
