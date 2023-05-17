@@ -100,9 +100,9 @@ do_install() {
   python -m venv --without-pip hass
   source hass/bin/activate
 
-  dpkg -i ./contrib/ffmpeg_5.1.2-7_i868.deb || true
+  # dpkg -i ./contrib/ffmpeg_5.1.2-7_i868.deb || true
 
-  dpkg -i ./contrib/ffmpeg_5.1.2-7_aarch64.deb || true
+  # dpkg -i ./contrib/ffmpeg_5.1.2-7_aarch64.deb || true
 
   pip install wheel
   pip install tzdata
@@ -110,15 +110,18 @@ do_install() {
   pip install setuptools
   MATHLIB=m pip install aiohttp_cors==0.7.0
   MATHLIB=m pip install PyTurboJPEG==1.6.7
+  MATHLIB=m pip install numpy==1.23.2
   dpkg -i $script_dir/contrib/python-numpy_1.23.2_aarch64.deb || true
   apt install -f $APT_INSTALL_FLAGS
 
   pip install git+https://github.com/amitdev/lru-dict@5013406c409a0a143a315146df388281bfb2172d
-
+  
+  pip install ./contrib/ha-av-10.0.0.tar.gz
   SODIUM_INSTALL=system pip install pynacl
 
   RUSTFLAGS="-C lto=n" CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')"  CRYPTOGRAPHY_DONT_BUILD_RUST=1 pip install homeassistant
 
+  rm -rf ~/.homeassistant/deps
 }
 
 [[ ${#args[@]} -eq 0 ]] && usage && die;
