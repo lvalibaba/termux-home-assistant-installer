@@ -45,4 +45,5 @@ sleep 1
 
 pkg i git
 git clone https://github.com/talss89/termux-home-assistant-installer.git
+chmod 0777 ~termux-home-assistant-installer/termux-home-assistant.sh
 cd termux-home-assistant-installer && ./termux-home-assistant.sh install
