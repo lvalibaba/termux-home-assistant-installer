@@ -89,8 +89,7 @@ do_install() {
   pkg update $APT_INSTALL_FLAGS
   apt upgrade $APT_INSTALL_FLAGS
 
-  pkg i tsu python nano termux-api make libjpeg-turbo make git rust python-cryptography libcrypt libffi binutils mosquitto wget libsodium python-numpy $APT_INSTALL_FLAGS
-  pkg i freetype game-music-emu libaom libandroid-glob libass libbluray libbz2 libdav1d libgnutls libiconv liblzma libmp3lame libopus librav1e libsoxr libssh libtheora libvorbis libvpx libvidstab libwebp libx264 libx265 libxml2 libzimg littlecms ocl-icd xvidcore zlib opencl-headers jq
+  pkg i tsu python nano termux-api make libjpeg-turbo make git rust python-cryptography libcrypt libffi binutils mosquitto wget libsodium python-numpy freetype game-music-emu libaom libandroid-glob libass libbluray libbz2 libdav1d libgnutls libiconv liblzma libmp3lame libopus librav1e libsoxr libssh libtheora libvorbis libvpx libvidstab libwebp libx264 libx265 libxml2 libzimg littlecms ocl-icd xvidcore zlib opencl-headers jq $APT_INSTALL_FLAGS
   
   apt install -f $APT_INSTALL_FLAGS
 
